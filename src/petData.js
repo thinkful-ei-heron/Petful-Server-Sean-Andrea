@@ -147,3 +147,5 @@ const petData = {
 		}
 	]
 };
+
+module.exports = petData;
