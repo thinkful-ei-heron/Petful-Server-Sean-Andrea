@@ -1,10 +1,18 @@
 /* eslint-disable indent */
 'use strict';
+require('dotenv').config();
+const { PORT } = require('./config');
 const express = require('express');
 const cors = require('cors');
+const catRouter = require('./cats/cats-router');
+const dogRouter = require('./dogs/dogs-router');
 
 const app = express();
+
 app.use(cors());
+
+app.use('/api/cats', catRouter);
+app.use('/api/dogs', dogRouter);
 
 // Catch-all 404
 app.use(function(req, res, next) {
@@ -23,6 +31,6 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
 	console.log('Serving on 8080');
 });
