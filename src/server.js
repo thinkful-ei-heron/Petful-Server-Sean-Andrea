@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 'use strict';
 require('dotenv').config();
-const { PORT } = require('./config');
+const { PORT, CLIENT_ORIGIN } = require('./config');
 const express = require('express');
 const cors = require('cors');
 const catRouter = require('./cats/cats-router');
@@ -9,6 +9,11 @@ const dogRouter = require('./dogs/dogs-router');
 const app = express();
 
 app.use(cors());
+app.use(
+	cors({
+		origin: CLIENT_ORIGIN
+	})
+);
 
 app.use('/api/cats', catRouter);
 app.use('/api/dogs', dogRouter);

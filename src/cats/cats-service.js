@@ -12,30 +12,32 @@ const CatsService = {
 		if (!catQ) catQ = new Queue();
 
 		let queueSize = this.catArray(catQ).length;
-		while (queueSize < 6) {
+		while (queueSize < 4) {
 			this.addCat(catQ);
 			queueSize++;
 		}
 		let res = this.catArray(catQ);
-		console.log(`${res[0].name}`);
+		console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
 	},
 	//adds a cat to the queue
-	addCat(queue) {
+	addCat(catQ) {
 		let ranCat = Math.ceil(7 * Math.random() - 1);
 		let cat = petData.cats[ranCat];
-		queue.enqueue(cat);
+		catQ.enqueue(cat);
+		console.log(catQ);
 	},
 	//deletes cat from queue
-	adoptCat(queue) {
+	adoptCat() {
 		if (catQ) {
 			catQ.dequeue();
 		}
+		return 'cat was adopted';
 	},
 	// will push cat into array
-	catArray(queue) {
+	catArray(catQ) {
 		let catArray = [];
-		let curr = queue.first;
+		let curr = catQ.first;
 		while (curr !== null) {
 			catArray.push(curr.value);
 			curr = curr.next;

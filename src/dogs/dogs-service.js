@@ -12,30 +12,32 @@ const DogsService = {
 		if (!dogQ) dogQ = new Queue();
 
 		let queueSize = this.dogArray(dogQ).length;
-		while (queueSize < 6) {
+		while (queueSize < 7) {
 			this.addDog(dogQ);
 			queueSize++;
 		}
 		let res = this.dogArray(dogQ);
-		console.log(`${res[0].name}`);
+		console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
 	},
 	//adds a dog to the queue
-	addDog(queue) {
+	addDog(dogQ) {
 		let ranDog = Math.ceil(7 * Math.random() - 1);
 		let dog = petData.dogs[ranDog];
-		queue.enqueue(dog);
+		dogQ.enqueue(dog);
+		console.log(dogQ);
 	},
 	//deletes dog from queue
-	adoptDog(queue) {
+	adoptDog() {
 		if (dogQ) {
 			dogQ.dequeue();
 		}
+		return 'dog was adopted';
 	},
 	// will push dog into array
-	dogArray(queue) {
+	dogArray(dogQ) {
 		let dogArray = [];
-		let curr = queue.first;
+		let curr = dogQ.first;
 		while (curr !== null) {
 			dogArray.push(curr.value);
 			curr = curr.next;
