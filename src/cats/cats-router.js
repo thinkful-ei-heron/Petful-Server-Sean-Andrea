@@ -17,7 +17,7 @@ const catRouter = express.Router();
 // });
 
 catRouter
-	.route('/')
+	.route('/allCats')
 	.get((req, res) => {
 		const cats = CatsService.getAllCats();
 		if (!cats) {
