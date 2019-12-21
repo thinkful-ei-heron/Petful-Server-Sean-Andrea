@@ -3,11 +3,13 @@
 
 const Queue = require('../queue/queue');
 const petData = require('../petData');
-
+const tempArray = []
 let dogQ = '';
 
 const DogsService = {
 	// retrieves all dogs
+	
+
 	getAllDogs() {
 		if (!dogQ) dogQ = new Queue();
 
@@ -22,10 +24,18 @@ const DogsService = {
 	},
 	//adds a dog to the queue
 	addDog(dogQ) {
-		let ranDog = Math.ceil(7 * Math.random() - 1);
-		let dog = petData.dogs[ranDog];
-		dogQ.enqueue(dog);
-		console.log(dogQ);
+		let ranDog = Math.ceil((Math.random() * 7)-1);
+		let dog
+		if(tempArray.indexOf(ranDog) === -1){
+			if(tempArray.length < petData.dogs.length){
+				tempArray.push(ranDog)
+				dog = petData.dogs[ranDog];
+				dogQ.enqueue(dog);
+				console.log(tempArray)
+			}
+		} else {
+			this.addDog(dogQ)
+		}
 	},
 	//deletes dog from queue
 	adoptDog() {
