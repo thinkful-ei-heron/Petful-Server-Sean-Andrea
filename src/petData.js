@@ -87,7 +87,8 @@ const petData = {
 		},
 		{
 			id: 2,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL:
+				'https://vetstreet.brightspotcdn.com/dims4/default/acfa4c4/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F7b%2F0526609e8c11e0a2380050568d634f%2Ffile%2FBeagle-3-645mk062311.jpg',
 			imageDescription: 'Beagle',
 			name: 'Ally',
 			sex: 'Female',
@@ -97,7 +98,8 @@ const petData = {
 		},
 		{
 			id: 3,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL:
+				'https://i0.wp.com/germanshepherdcentral.net/wp-content/uploads/2014/09/german-shepherd-411613_1280.jpg?resize=1000%2C851&ssl=1',
 			imageDescription: 'German Shephard',
 			name: 'Banana',
 			sex: 'Male',
@@ -107,7 +109,7 @@ const petData = {
 		},
 		{
 			id: 4,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL: 'https://cdn.orvis.com/images/DBS_GrePyr_1280.jpg',
 			imageDescription: 'Great Pyrenees',
 			name: 'Chapo',
 			sex: 'Male',
@@ -117,7 +119,7 @@ const petData = {
 		},
 		{
 			id: 5,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL: 'https://www.dogbreedslist.info/uploads/allimg/dog-pictures/Border-Collie-2.jpg',
 			imageDescription: 'Border Collie',
 			name: 'Gizmo',
 			sex: 'Male',
@@ -127,7 +129,8 @@ const petData = {
 		},
 		{
 			id: 6,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL:
+				'https://www.dogstrust.org.uk/dogimages/1189711_jackson_20190327125547_jackson-bowie-eyes-edit_800.jpg',
 			imageDescription: 'Siberian Husky',
 			name: 'Kodiak',
 			sex: 'Female',
@@ -137,7 +140,7 @@ const petData = {
 		},
 		{
 			id: 7,
-			imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
+			imageURL: 'https://www.allthingsdogs.com/wp-content/uploads/2019/04/Cute-Pitbull-Terrier.jpg',
 			imageDescription: 'Pitbull',
 			name: 'Nugget',
 			sex: 'Female',

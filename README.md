@@ -1,26 +1,27 @@
-# Express Boilerplate!
+# Petful Server
+A collaboration between Andrea Bender and Sean Cooper
+Live app: https://petful-client-sean-andrea.now.sh/
+Server GitHub: https://github.com/thinkful-ei-heron/Petful-Server-Sean-Andrea.git
 
-This is a boilerplate project used for starting new projects!
+## API
+Endpoints
 
-## How do set up?
+GET /cats/allCats will display all cats that are able to be adopted. It will return an image, image description, name, sex, age, breed, and story.
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+DELETE /cats/allCats When a cat is adopted, it will dequeue that cat and it can no longer be adopted.
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+GET /dogs/allDogs will display all dogs that are able to be adopted. It will return an image, image description, name, sex, age, breed, and story.
 
-## Scripts
+DELETE /dogs/allDogs When a dog is adopted, it will dequeue that dog and it can no longer be adopted.
 
-Start the application `npm start`
 
-Start nodemon for the application `npm run dev`
+## Summary
+Petful-server allows users to store and retrieve pets that could be adopted.
 
-Run the tests in watch mode `npm test`
 
-## Deploying
+## Technologies
 
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+- Node
+- Express
+- Mocha
+- Chai
