@@ -28,6 +28,7 @@ catRouter
 	.delete((req, res) => {
 		const cats = CatsService.adoptCat();
 		if (!cats) {
+			console.log('testing');
 			return res.status(400).json({ error: 'Sorry there are no cats available at this time' });
 		}
 		return res.json(cats);
