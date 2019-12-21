@@ -33,7 +33,7 @@ catRouter
 		return res.json(cats);
 	})
 	.post((req, res) =>{
-		//console.log(req)
+		console.log(req.body)
 	});
 
 module.exports = catRouter;

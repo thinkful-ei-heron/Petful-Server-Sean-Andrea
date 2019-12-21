@@ -33,7 +33,7 @@ dogRouter
 		return res.json(dogs);
 	})
 	.post((req, res) =>{
-		console.log(req)
+		console.log('Youve reached me')
 	})
 	;
 
