@@ -24,7 +24,8 @@ const petData = {
 		},
 		{
 			id: 3,
-			imageURL: 'http://cats.ava7.com/w/chinchilla-cat/domestic-cat-chinchilla-persian.jpg',
+			imageURL:
+				'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRurmQWyp4sqVAsKqbA6fiOqAUVUgRVohC-Jklon2p3aaQXeTgb',
 			imageDescription: 'Persian',
 			name: 'Daisy',
 			sex: 'Female',
@@ -44,7 +45,8 @@ const petData = {
 		},
 		{
 			id: 5,
-			imageURL: 'https://i.pinimg.com/474x/42/9e/9a/429e9a79c9bcf539e51d41e1c910be76--jordan-rare-cats.jpg',
+			imageURL:
+				'https://petsinapickle.co.uk/wp-content/uploads/2018/05/cat_portrait_pet_domestic_feline_cute_shorthair_looking-1374002.jpgd_.jpg',
 			imageDescription: 'Domestic shorthair',
 			name: 'Peaches',
 			sex: 'Female',
@@ -54,8 +56,7 @@ const petData = {
 		},
 		{
 			id: 6,
-			imageURL:
-				'https://s3.amazonaws.com/filestore.rescuegroups.org/6685/pictures/animals/10459/10459928/54644839_385x385.jpg',
+			imageURL: 'https://www.petguide.com/wp-content/uploads/2015/10/domestic-medium-hair-cat-1.jpg',
 			imageDescription: 'Domestic Medium Hair',
 			name: 'Wendy',
 			sex: 'Female',
@@ -140,7 +141,7 @@ const petData = {
 		},
 		{
 			id: 7,
-			imageURL: 'https://www.allthingsdogs.com/wp-content/uploads/2019/04/Cute-Pitbull-Terrier.jpg',
+			imageURL: 'https://assets3.thrillist.com/v1/image/2559505/size/tmg-article_tall.jpg',
 			imageDescription: 'Pitbull',
 			name: 'Nugget',
 			sex: 'Female',
