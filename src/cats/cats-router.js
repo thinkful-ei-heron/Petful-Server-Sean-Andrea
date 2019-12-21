@@ -32,6 +32,9 @@ catRouter
 			return res.status(400).json({ error: 'Sorry there are no cats available at this time' });
 		}
 		return res.json(cats);
+	})
+	.post((req, res) =>{
+		//console.log(req)
 	});
 
 module.exports = catRouter;

@@ -31,6 +31,10 @@ dogRouter
 			return res.status(400).json({ error: 'Sorry there are no dogs available at this time' });
 		}
 		return res.json(dogs);
-	});
+	})
+	.post((req, res) =>{
+		console.log(req)
+	})
+	;
 
 module.exports = dogRouter;
