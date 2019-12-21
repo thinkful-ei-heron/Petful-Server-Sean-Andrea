@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable indent */
 'use strict';
 
 const Queue = require('../queue/queue');
 const petData = require('../petData');
-let tempArray = []
+let tempArray = [];
 
 let catQ = '';
 
@@ -24,21 +25,18 @@ const CatsService = {
 	//adds a cat to the queue
 	addCat(catQ) {
 		let ranCat = Math.ceil(7 * Math.random() - 1);
-		let cat 
-		if(tempArray.indexOf(ranCat) === -1){
-			if(tempArray.length < petData.cats.length){
-				tempArray.push(ranCat)
+		let cat;
+		if (tempArray.indexOf(ranCat) === -1) {
+			if (tempArray.length < petData.cats.length) {
+				tempArray.push(ranCat);
 				cat = petData.cats[ranCat];
 				catQ.enqueue(cat);
-				console.log(tempArray)
+				console.log(tempArray);
 			}
 		} else {
-			this.addCat(catQ)
+			this.addCat(catQ);
 		}
 	},
-		//catQ.enqueue(cat);
-		//console.log(catQ);
-	//},
 	//deletes cat from queue
 	adoptCat() {
 		if (catQ) {
