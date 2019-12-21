@@ -45,7 +45,8 @@ const petData = {
 		},
 		{
 			id: 5,
-			imageURL: 'https://i.pinimg.com/474x/42/9e/9a/429e9a79c9bcf539e51d41e1c910be76--jordan-rare-cats.jpg',
+			imageURL:
+				'https://petsinapickle.co.uk/wp-content/uploads/2018/05/cat_portrait_pet_domestic_feline_cute_shorthair_looking-1374002.jpgd_.jpg',
 			imageDescription: 'Domestic shorthair',
 			name: 'Peaches',
 			sex: 'Female',
