@@ -7,6 +7,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const catRouter = require('./cats/cats-router');
 const dogRouter = require('./dogs/dogs-router');
+const userRouter = require('./user/user-router');
 
 const app = express();
 
@@ -19,10 +20,9 @@ app.use(
 );
 app.use(morgan(morganSetting));
 
-
-
 app.use('/api/cats', catRouter);
 app.use('/api/dogs', dogRouter);
+app.use('/api/users', userRouter);
 
 // Catch-all 404
 app.use(function(req, res, next) {
