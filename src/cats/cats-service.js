@@ -3,19 +3,20 @@
 'use strict';
 
 const Queue = require('../queue/queue');
+const { catQ } = require('../queue/queue');
 const petData = require('../petData');
-let tempArray = [];
+//let tempArray = [];
 
-let catQ = '';
+//let catQ = [];
 
 const CatsService = {
 	// retrieves all cats
 	getAllCats() {
-		if (!catQ) catQ = new Queue();
-
+		//if (!catQ) catQ = new Queue();
+		let tempArray = []
 		let queueSize = this.catArray(catQ).length;
-		while (queueSize < 4) {
-			this.addCat(catQ);
+		while (queueSize < 7) {
+			this.addCat(catQ, tempArray);
 			queueSize++;
 		}
 		let res = this.catArray(catQ);
@@ -23,7 +24,8 @@ const CatsService = {
 		return res;
 	},
 	//adds a cat to the queue
-	addCat(catQ) {
+	addCat(catQ, tempArray) {
+		//let tempArray = []
 		let ranCat = Math.ceil(7 * Math.random() - 1);
 		let cat;
 		if (tempArray.indexOf(ranCat) === -1) {
@@ -34,7 +36,7 @@ const CatsService = {
 				console.log(tempArray);
 			}
 		} else {
-			this.addCat(catQ);
+			this.addCat(catQ, tempArray);
 		}
 	},
 	//deletes cat from queue

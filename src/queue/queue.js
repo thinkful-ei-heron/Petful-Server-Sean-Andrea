@@ -30,4 +30,8 @@ class Queue {
 	}
 }
 
-module.exports = Queue;
+let catQ = new Queue();
+let dogQ = new Queue();
+
+module.exports = { Queue, catQ, dogQ }
+//module.exports = Queue;

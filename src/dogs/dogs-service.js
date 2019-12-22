@@ -2,29 +2,37 @@
 /* eslint-disable indent */
 'use strict';
 
-const Queue = require('../queue/queue');
+const { Queue } = require('../queue/queue');
+const { dogQ } = require('../queue/queue');
 const petData = require('../petData');
-const tempArray = [];
-let dogQ = '';
+//let tempArray = []
+//let dogArray = []
+//const tempArray = [];
+// dogQ = [];
 
 const DogsService = {
 	// retrieves all dogs
 
 	getAllDogs() {
-		if (!dogQ) dogQ = new Queue();
-
+		//if (!dogQ) dogQ = new Queue();
+		//this.dogArray(dogQ)
+		//dogArray = []
+		let tempArray = []
 		let queueSize = this.dogArray(dogQ).length;
+		if(queueSize < 7){
 		while (queueSize < 7) {
-			this.addDog(dogQ);
-			queueSize++;
+			 this.addDog(dogQ, tempArray);
+			 queueSize++;
+		 }
 		}
 		let res = this.dogArray(dogQ);
 		console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
 	},
 	//adds a dog to the queue
-	addDog(dogQ) {
-		let ranDog = Math.ceil(7 * Math.random() - 1);
+	addDog(dogQ, tempArray) {
+		//let tempArray = []
+		let ranDog = Math.ceil(7 * Math.random()-1);
 		let dog;
 		if (tempArray.indexOf(ranDog) === -1) {
 			if (tempArray.length < petData.dogs.length) {
@@ -34,7 +42,7 @@ const DogsService = {
 				console.log(tempArray);
 			}
 		} else {
-			this.addDog(dogQ);
+			this.addDog(dogQ, tempArray);
 		}
 	},
 	//deletes dog from queue
@@ -53,7 +61,7 @@ const DogsService = {
 			curr = curr.next;
 		}
 		return dogArray;
-	}
+	},
 };
 
 module.exports = DogsService;
