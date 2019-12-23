@@ -1,24 +1,25 @@
 /* eslint-disable indent */
 'use strict';
+
 const express = require('express');
 const jsonBodyParser = express.json();
-const UsersService = require('../user/user-service');
+const UserService = require('./users-service');
 
 const userRouter = express.Router();
 
 userRouter
 	.route('/')
-	.get((re, res) => {
-		const users = UsersService.getAllUsers();
-		res.json(users);
+	.get((req, res) => {
+		const userArr = UserService.getAllUsers();
+		res.json(userArr);
 	})
 	.post(jsonBodyParser, (req, res) => {
-		const userName = req.body.name;
-		const userId = UsersService.addUser(userName);
+		const name = req.body.name;
+		const userId = UserService.addUser(name);
 		res.json(userId).status(201);
 	})
 	.delete((req, res) => {
-		UsersService.deletePerson();
+		UserService.removeUser();
 		res.status(204).end();
 	});
 

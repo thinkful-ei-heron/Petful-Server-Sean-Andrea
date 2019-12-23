@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable indent */
 'use strict';
 require('dotenv').config();
@@ -7,7 +8,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const catRouter = require('./cats/cats-router');
 const dogRouter = require('./dogs/dogs-router');
-const userRouter = require('./user/user-router');
+const userRouter = require('./users/users-router');
 
 const app = express();
 
@@ -33,7 +34,7 @@ app.use(function(req, res, next) {
 
 // Catch-all Error handler
 // Add NODE_ENV check to prevent stacktrace leak
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
 	res.status(err.status || 500);
 	res.json({
 		message: err.message,
