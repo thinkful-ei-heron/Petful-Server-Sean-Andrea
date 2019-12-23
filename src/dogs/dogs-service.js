@@ -10,21 +10,22 @@ const DogsService = {
 	// retrieves all dogs
 
 	getAllDogs() {
-		let tempArray = []
+		let tempArray = [];
 		let queueSize = dogQ.size();
-		if(queueSize < 7){
-		while (queueSize < 7) {
-			 this.addDog(dogQ, tempArray);
-			 queueSize++;
-		 }
+		if (queueSize < 7) {
+			while (queueSize < 7) {
+				this.addDog(dogQ, tempArray);
+				queueSize++;
+			}
 		}
 		let res = this.dogArray(dogQ);
-		console.log(`Next to be adopted is ${res[0].name}`);
+		// console.log(res);
+		// console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
 	},
 	//adds a dog to the queue
 	addDog(dogQ, tempArray) {
-		let ranDog = Math.ceil(7 * Math.random()-1);
+		let ranDog = Math.ceil(7 * Math.random() - 1);
 		let dog;
 		if (tempArray.indexOf(ranDog) === -1) {
 			if (tempArray.length < petData.dogs.length) {
@@ -53,7 +54,7 @@ const DogsService = {
 			curr = curr.next;
 		}
 		return dogArr;
-	},
+	}
 };
 
 module.exports = DogsService;
