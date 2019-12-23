@@ -5,16 +5,11 @@
 const Queue = require('../queue/queue');
 const { catQ } = require('../queue/queue');
 const petData = require('../petData');
-//let tempArray = [];
-
-//let catQ = [];
 
 const CatsService = {
 	// retrieves all cats
 	getAllCats() {
-		//if (!catQ) catQ = new Queue();
 		let tempArray = []
-		//let queueSize = this.catArray(catQ).length;
 		let queueSize = catQ.size();
 		if(queueSize < 7){
 		while (queueSize < 7) {
@@ -28,7 +23,6 @@ const CatsService = {
 	},
 	//adds a cat to the queue
 	addCat(catQ, tempArray) {
-		//let tempArray = []
 		let ranCat = Math.ceil(7 * Math.random() - 1);
 		let cat;
 		if (tempArray.indexOf(ranCat) === -1) {
