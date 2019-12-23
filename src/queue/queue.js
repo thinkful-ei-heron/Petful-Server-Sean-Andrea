@@ -28,6 +28,19 @@ class Queue {
 		}
 		return node.value;
 	}
+	size() {
+		let currNode = this.first;
+		let counter = 0;
+		while (currNode !== null) {
+			currNode = currNode.next;
+			counter++;
+		}
+		return counter;
+	}
 }
 
-module.exports = Queue;
+let catQ = new Queue();
+let dogQ = new Queue();
+
+module.exports = { Queue, catQ, dogQ }
+//module.exports = Queue;

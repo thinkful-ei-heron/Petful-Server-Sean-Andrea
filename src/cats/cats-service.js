@@ -3,27 +3,26 @@
 'use strict';
 
 const Queue = require('../queue/queue');
+const { catQ } = require('../queue/queue');
 const petData = require('../petData');
-let tempArray = [];
-
-let catQ = '';
 
 const CatsService = {
 	// retrieves all cats
 	getAllCats() {
-		if (!catQ) catQ = new Queue();
-
-		let queueSize = this.catArray(catQ).length;
-		while (queueSize < 4) {
-			this.addCat(catQ);
+		let tempArray = []
+		let queueSize = catQ.size();
+		if(queueSize < 7){
+		while (queueSize < 7) {
+			this.addCat(catQ, tempArray);
 			queueSize++;
 		}
+		0}
 		let res = this.catArray(catQ);
 		console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
 	},
 	//adds a cat to the queue
-	addCat(catQ) {
+	addCat(catQ, tempArray) {
 		let ranCat = Math.ceil(7 * Math.random() - 1);
 		let cat;
 		if (tempArray.indexOf(ranCat) === -1) {
@@ -34,13 +33,13 @@ const CatsService = {
 				console.log(tempArray);
 			}
 		} else {
-			this.addCat(catQ);
+			this.addCat(catQ, tempArray);
 		}
 	},
 	//deletes cat from queue
 	adoptCat() {
 		if (catQ) {
-			catQ.dequeue();
+			catQ.enqueue(catQ.dequeue());
 		}
 		return 'cat was adopted';
 	},
