@@ -1,6 +1,6 @@
 # Petful Server
 A collaboration between Andrea Bender and Sean Cooper
-Live app: https://petful-client-sean-andrea.now.sh/
+Live app: https://github.com/thinkful-ei-heron/Petful-Client-Sean-Andrea.git
 Server GitHub: https://github.com/thinkful-ei-heron/Petful-Server-Sean-Andrea.git
 
 ## API
