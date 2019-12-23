@@ -5,6 +5,9 @@
 const { Queue } = require('../queue/queue');
 const { dogQ } = require('../queue/queue');
 const petData = require('../petData');
+//const dogArr = []
+let queueSize = dogQ.size();
+
 //let tempArray = []
 //let dogArray = []
 //const tempArray = [];
@@ -17,8 +20,10 @@ const DogsService = {
 		//if (!dogQ) dogQ = new Queue();
 		//this.dogArray(dogQ)
 		//dogArray = []
+		//let dogArr = []
 		let tempArray = []
-		let queueSize = this.dogArray(dogQ).length;
+		//let queueSize = this.dogArray(dogQ).length;
+		let queueSize = dogQ.size();
 		if(queueSize < 7){
 		while (queueSize < 7) {
 			 this.addDog(dogQ, tempArray);
@@ -48,19 +53,19 @@ const DogsService = {
 	//deletes dog from queue
 	adoptDog() {
 		if (dogQ) {
-			dogQ.dequeue();
+			dogQ.enqueue(dogQ.dequeue());
 		}
 		return 'dog was adopted';
 	},
 	// will push dog into array
 	dogArray(dogQ) {
-		let dogArray = [];
+		let dogArr = [];
 		let curr = dogQ.first;
 		while (curr !== null) {
-			dogArray.push(curr.value);
+			dogArr.push(curr.value);
 			curr = curr.next;
 		}
-		return dogArray;
+		return dogArr;
 	},
 };
 

@@ -14,11 +14,14 @@ const CatsService = {
 	getAllCats() {
 		//if (!catQ) catQ = new Queue();
 		let tempArray = []
-		let queueSize = this.catArray(catQ).length;
+		//let queueSize = this.catArray(catQ).length;
+		let queueSize = catQ.size();
+		if(queueSize < 7){
 		while (queueSize < 7) {
 			this.addCat(catQ, tempArray);
 			queueSize++;
 		}
+		0}
 		let res = this.catArray(catQ);
 		console.log(`Next to be adopted is ${res[0].name}`);
 		return res;
@@ -42,7 +45,7 @@ const CatsService = {
 	//deletes cat from queue
 	adoptCat() {
 		if (catQ) {
-			catQ.dequeue();
+			catQ.enqueue(catQ.dequeue());
 		}
 		return 'cat was adopted';
 	},
